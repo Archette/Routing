@@ -1,0 +1,14 @@
+{
+    "name": "archette/routing",
+    "description": "Implementation of rixafy/routing to nette framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rick Strafy",
+            "email": "rixafy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
