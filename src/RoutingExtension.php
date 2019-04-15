@@ -6,6 +6,7 @@ namespace Archette\Routing;
 
 use Doctrine\Common\Persistence\Mapping\Driver\AnnotationDriver;
 use Nette\DI\CompilerExtension;
+use Nette\DI\ServiceDefinition;
 use Rixafy\Routing\Route\Group\RouteGroupFacade;
 use Rixafy\Routing\Route\Group\RouteGroupFactory;
 use Rixafy\Routing\Route\Group\RouteGroupRepository;
@@ -17,8 +18,9 @@ class RoutingExtension extends CompilerExtension
 {
     public function beforeCompile()
     {
-        $this->getContainerBuilder()->getDefinitionByType(AnnotationDriver::class)
-            ->addSetup('addPaths', [['vendor/rixafy/routing']]);
+    	/** @var ServiceDefinition $annotationDriver */
+        $annotationDriver = $this->getContainerBuilder()->getDefinitionByType(AnnotationDriver::class);
+        $annotationDriver->addSetup('addPaths', [['vendor/rixafy/routing']]);
     }
 
     public function loadConfiguration()

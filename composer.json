@@ -12,6 +12,6 @@
     "minimum-stability": "dev",
     "require": {
         "rixafy/routing": "dev-master",
-        "nette/di": "^2.4"
+        "nette/di": "^3.0"
     }
 }
