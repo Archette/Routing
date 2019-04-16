@@ -6,7 +6,7 @@ namespace Archette\Routing;
 
 use Doctrine\Common\Persistence\Mapping\Driver\AnnotationDriver;
 use Nette\DI\CompilerExtension;
-use Nette\DI\ServiceDefinition;
+use Nette\DI\Definitions\ServiceDefinition;
 use Rixafy\Routing\Route\Group\RouteGroupFacade;
 use Rixafy\Routing\Route\Group\RouteGroupFactory;
 use Rixafy\Routing\Route\Group\RouteGroupRepository;
