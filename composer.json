@@ -13,5 +13,15 @@
     "require": {
         "rixafy/routing": "dev-master",
         "nette/di": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Archette\\Routing\\": "src"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
     }
 }
