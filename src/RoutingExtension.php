@@ -13,6 +13,7 @@ use Rixafy\Routing\Route\Group\RouteGroupRepository;
 use Rixafy\Routing\Route\RouteFacade;
 use Rixafy\Routing\Route\RouteFactory;
 use Rixafy\Routing\Route\RouteRepository;
+use Rixafy\Routing\Route\RouteResolver;
 
 class RoutingExtension extends CompilerExtension
 {
@@ -42,5 +43,8 @@ class RoutingExtension extends CompilerExtension
 
         $this->getContainerBuilder()->addDefinition($this->prefix('routeGroupFactory'))
             ->setFactory(RouteGroupFactory::class);
+
+        $this->getContainerBuilder()->addDefinition($this->prefix('routeResolver'))
+            ->setFactory(RouteResolver::class);
     }
 }
