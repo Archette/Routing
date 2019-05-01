@@ -12,7 +12,6 @@ use Rixafy\Routing\Route\Group\RouteGroupFactory;
 use Rixafy\Routing\Route\Group\RouteGroupRepository;
 use Rixafy\Routing\Route\RouteFacade;
 use Rixafy\Routing\Route\RouteFactory;
-use Rixafy\Routing\Route\RouteGenerator;
 use Rixafy\Routing\Route\RouteRepository;
 use Rixafy\Routing\Route\Site\RouteSiteFacade;
 use Rixafy\Routing\Route\Site\RouteSiteFactory;
@@ -55,8 +54,5 @@ class RoutingExtension extends CompilerExtension
 
         $this->getContainerBuilder()->addDefinition($this->prefix('routeSiteFactory'))
             ->setFactory(RouteSiteFactory::class);
-
-        $this->getContainerBuilder()->addDefinition($this->prefix('routeGenerator'))
-            ->setFactory(RouteGenerator::class);
     }
 }
