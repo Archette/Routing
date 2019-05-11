@@ -19,14 +19,14 @@ use Rixafy\Routing\Route\Site\RouteSiteRepository;
 
 class RoutingExtension extends CompilerExtension
 {
-    public function beforeCompile()
+    public function beforeCompile(): void
     {
     	/** @var ServiceDefinition $annotationDriver */
         $annotationDriver = $this->getContainerBuilder()->getDefinitionByType(AnnotationDriver::class);
         $annotationDriver->addSetup('addPaths', [['vendor/rixafy/routing']]);
     }
 
-    public function loadConfiguration()
+    public function loadConfiguration(): void
     {
         $this->getContainerBuilder()->addDefinition($this->prefix('routeFacade'))
             ->setFactory(RouteFacade::class);
