@@ -21,9 +21,14 @@ class RoutingExtension extends CompilerExtension
 {
     public function beforeCompile(): void
     {
-    	/** @var ServiceDefinition $annotationDriver */
-        $annotationDriver = $this->getContainerBuilder()->getDefinitionByType(MappingDriver::class);
-        $annotationDriver->addSetup('addPaths', [['vendor/rixafy/routing']]);
+		if (class_exists('Nettrine\ORM\DI\Helpers\MappingHelper')) {
+			\Nettrine\ORM\DI\Helpers\MappingHelper::of($this)
+				->addAnnotation('Rixafy\Routing', __DIR__ . '/../../../rixafy/routing');
+		} else {
+			/** @var ServiceDefinition $annotationDriver */
+			$annotationDriver = $this->getContainerBuilder()->getDefinitionByType(MappingDriver::class);
+			$annotationDriver->addSetup('addPaths', [['vendor/rixafy/routing']]);
+		}
     }
 
     public function loadConfiguration(): void
